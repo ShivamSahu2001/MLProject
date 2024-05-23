@@ -1,0 +1,61 @@
+ <!-- <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Canteen Transactions</title>
+ </head>
+ <body>
+     <h1 class="Cant-Title">Canteen Transactions Analysis</h1>
+     <h2>Clustering Visualization</h2>
+     <img src="data:image/png;base64,{{ plot_url }}" alt="Clustering plot">
+ 
+     <h2>Item Recommendations</h2>
+     <form action="/recommend" method="post">
+         <label for="cluster_id">Enter Cluster ID (0-4):</label>
+         <input type="number" id="cluster_id" name="cluster_id" min="0" max="4" required>
+         <button type="submit">Get Recommendations</button>
+     </form>
+ </body>
+ </html>
+  -->
+
+
+
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Canteen Transactions</title>
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+      <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+  </head>
+  <body>
+      <div class="container mt-4">
+          <h1 class="text-center">Canteen Transactions Analysis</h1>
+          <div class="row mt-4">
+              <div class="col-md-12 text-center">
+                  <h2>Clustering Visualization</h2>
+                  <img src="data:image/png;base64,{{ plot_url }}" alt="Clustering plot" class="img-fluid"
+                  style="max-width: 60%; height: 230px;">
+                  
+              </div>
+          </div>
+          <div class="row mt-4">
+              <div class="col-md-12">
+                  <h2 style="margin-left:120px;">Item Recommendations</h2>
+                  <form action="/recommend" method="post" class="form-inline justify-content-center">
+                      <label for="cluster_id" class="mr-2">Enter Cluster ID (0-4):</label>
+                      <input type="number" id="cluster_id" name="cluster_id" min="0" max="4" required class="form-control mr-2">
+                      <button type="submit" class="btn btn-primary">Get Recommendations</button>
+                  </form>
+              </div>
+          </div>
+      </div>
+      <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  </body>
+  </html>
+  
